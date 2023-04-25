@@ -3,5 +3,6 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: mongoChat
+      uri : mongodb://localhost:27017
+      database: chatApp
 
