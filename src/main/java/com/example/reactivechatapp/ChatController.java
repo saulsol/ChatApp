@@ -16,17 +16,19 @@ public class ChatController {
 
     private final ChatRepository chatRepository;
 
+    @CrossOrigin
     @GetMapping(value = "sender/{sender}/receiver/{receiver}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Chat> getMsg(@PathVariable String sender, @PathVariable String receiver){
         return  chatRepository.mFindBySender(sender, receiver)
                 .subscribeOn(Schedulers.boundedElastic()); // Flux 타입 리턴
     }
 
+    @CrossOrigin
     @PostMapping("/chat")
-    public Flux<Chat> setMsg(@RequestBody Chat chat){ // Mono는 데이터를 한 번만 리턴한다는 것
+    public Mono<Chat> setMsg(@RequestBody Chat chat){ // Mono는 데이터를 한 번만 리턴한다는 것
         chat.setCreatedAt(LocalDateTime.now());
 
-        return chatRepository.findAll();
+        return chatRepository.save(chat);
     }
 
 
