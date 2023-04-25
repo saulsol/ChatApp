@@ -1,13 +1,16 @@
 package com.example.reactivechatapp;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Data
-@Document(collation = "chat")
+@Getter
+@Setter
+@Document(collection = "chat")
 public class Chat {
     @Id
     private String id;
