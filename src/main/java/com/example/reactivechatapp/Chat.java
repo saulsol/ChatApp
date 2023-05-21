@@ -1,6 +1,6 @@
 package com.example.reactivechatapp;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -19,7 +19,9 @@ public class Chat {
 
     private String sender; // 보내는 사람
     
-    private String receiver; // 받는 사람
+    private String receiver; // 받는 사람(방 이름)
+
+    private Integer roomNum; // 방 번호
 
     private LocalDateTime createdAt;
 
