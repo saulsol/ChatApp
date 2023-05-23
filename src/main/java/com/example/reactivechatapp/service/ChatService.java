@@ -1,8 +1,9 @@
-package com.example.reactivechatapp;
+package com.example.reactivechatapp.service;
 
-import lombok.AllArgsConstructor;
+import com.example.reactivechatapp.repository.ChatRepository;
+import com.example.reactivechatapp.DTO.ChatDto;
+import com.example.reactivechatapp.domain.Chat;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.repository.Tailable;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

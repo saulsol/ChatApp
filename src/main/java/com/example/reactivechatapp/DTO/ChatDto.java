@@ -1,5 +1,6 @@
-package com.example.reactivechatapp;
+package com.example.reactivechatapp.DTO;
 
+import com.example.reactivechatapp.ReceiverType;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;

@@ -1,6 +1,7 @@
-package com.example.reactivechatapp;
+package com.example.reactivechatapp.domain;
 
 
+import com.example.reactivechatapp.ReceiverType;
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import lombok.Builder;
 import lombok.Getter;
