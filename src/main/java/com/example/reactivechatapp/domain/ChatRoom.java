@@ -19,12 +19,13 @@ public class ChatRoom {
     // 채팅방 이름
     private String chatRoomName;
 
-    // 채팅방 인원 수
+    // 채팅방 인원 수 -> 인원수가 0명이 되면 채팅방 자연 삭제
     private Long ChatRoomNumOfPeople;
 
     // 채팅방 인원 리스트
     private List<String> memberList;
 
-
+    // 채팅방을 만든 사람 -> 삭제권한 소유
+    private String createdBy;
 
 }
