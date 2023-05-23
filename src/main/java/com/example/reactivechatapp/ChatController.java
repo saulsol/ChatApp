@@ -13,30 +13,31 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class ChatController {
 
+    private final ChatService chatService;
     private final ChatRepository chatRepository;
+
 
     @CrossOrigin
     @GetMapping(value = "sender/{sender}/receiver/{receiver}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Chat> getMsg(@PathVariable String sender, @PathVariable String receiver){
-        return  chatRepository.mFindBySender(sender, receiver)
+        return  chatRepository.rFindBySender(sender, receiver)
                 .subscribeOn(Schedulers.boundedElastic()); // Flux 타입 리턴
     }
 
+    // 귓속말 기능 보류
+
     @CrossOrigin
     @PostMapping("/chat")
-    public Mono<Chat> setMsg(@RequestBody Chat chat){ // Mono는 데이터를 한 번만 리턴한다는 것
-        chat.setCreatedAt(LocalDateTime.now());
-
-        return chatRepository.save(chat);
+    public Mono<Chat> setMsg(@RequestBody ChatDto chatDto){
+        return chatService.saveChat(chatDto);
     }
 
 
+    // SSE
     @CrossOrigin
-    @GetMapping(value = "/app/chats/chatrooms/{roomNum}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Chat> findByRoomNum(@PathVariable Integer roomNum){
-
-        return chatRepository.mFindByRoomNum(roomNum)
-                .subscribeOn(Schedulers.boundedElastic());
+    @GetMapping(value = "/workspaces/{workspace_name}/chatrooms/{chatroom_name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Chat> chatAPI(@PathVariable String workspace_name, @PathVariable String chatroom_name ){
+        return chatService.slidedChat(workspace_name, chatroom_name);
     }
 
 

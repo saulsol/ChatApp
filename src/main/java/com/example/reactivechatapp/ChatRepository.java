@@ -7,13 +7,13 @@ import reactor.core.publisher.Flux;
 
 public interface ChatRepository extends ReactiveMongoRepository<Chat, String> {
 
-    @Tailable // 계속 데이터를 흘려 보낸다(Flux 로)
+    @Tailable
     @Query("{'sender' : ?0, 'receiver' : ?1}")
-    Flux<Chat> mFindBySender(String sender, String receiver);
+    Flux<Chat> rFindBySender(String sender, String receiver);
 
 
     @Tailable
-    @Query("{'roomNum': ?0}") // 방 단위로 조회하게 됨
-    Flux<Chat> mFindByRoomNum(Integer roomNum);
+    @Query("{'workSpaceName': ?0, 'roomName': ?1}") // 워크 스페이스, 방 단위로 조회하게 됨
+    Flux<Chat> rFindByWorkspaceIdAndRoomName(String workspaceName, String roomName);
 
 }
