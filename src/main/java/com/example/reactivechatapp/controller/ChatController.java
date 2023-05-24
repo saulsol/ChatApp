@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
-@RestController // 데이터 리턴 서버
+@RestController
 @RequiredArgsConstructor
 public class ChatController {
 

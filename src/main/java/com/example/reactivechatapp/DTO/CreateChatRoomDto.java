@@ -10,11 +10,16 @@ import java.util.List;
 
 @Data
 @Builder
-public class ChatRoomDto {
+public class CreateChatRoomDto {
+
+    private String workSpaceName;
 
     private String chatRoomName;
 
     private Long ChatRoomNumOfPeople;
 
     private List<String> memberList;
+
+    private String createdBy;
+
 }

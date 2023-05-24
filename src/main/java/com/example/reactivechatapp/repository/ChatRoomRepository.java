@@ -8,4 +8,5 @@ public interface ChatRoomRepository extends ReactiveMongoRepository<ChatRoom, St
 
 
 
+
 }
