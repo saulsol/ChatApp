@@ -19,6 +19,7 @@ public class ChatRoomService {
     public Mono<ChatRoom> createChatRoom(CreateChatRoomDto createChatRoomDto){
 
         ChatRoom newChatRoom = ChatRoom.builder()
+                .workSpaceId(createChatRoomDto.getWorkSpaceId())
                 .workSpaceName(createChatRoomDto.getWorkSpaceName())
                 .chatRoomName(createChatRoomDto.getChatRoomName())
                 .ChatRoomNumOfPeople(createChatRoomDto.getChatRoomNumOfPeople())

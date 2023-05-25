@@ -23,10 +23,10 @@ public class ChatService {
     }
 
 
-    public Flux<Chat> slidedChat(String workspaceName, String chatroomName){
+    public Flux<Chat> slidedChat(Long workSpaceId, String chatroomName){
 
         return chatRepository
-                .rFindByWorkspaceIdAndRoomName(workspaceName, chatroomName)
+                .rFindByWorkspaceIdAndRoomName(workSpaceId, chatroomName)
                 .subscribeOn(Schedulers.boundedElastic());
     }
 
@@ -36,9 +36,9 @@ public class ChatService {
                 .msg(chatDto.getMsg())
                 .sender(chatDto.getSender())
                 .receiver(chatDto.getReceiver())
-                .workSpaceName(chatDto.getWorkSpaceName())
+                .workSpaceId(chatDto.getWorkSpaceId())
                 .createdAt(LocalDateTime.now())
-                .roomName(chatDto.getRoomName())
+                .chatRoomName(chatDto.getChatRoomName())
                 .build();
     }
 

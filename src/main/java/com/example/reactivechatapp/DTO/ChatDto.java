@@ -17,8 +17,8 @@ public class ChatDto {
 
     private ReceiverType receiver; // 받는 사람[방 전체, 개인]
 
-    private String workSpaceName;
+    private Long workSpaceId;
 
-    private String roomName; // 방 번호
+    private String chatRoomName; // 방 번호
 
 }

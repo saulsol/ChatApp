@@ -37,9 +37,9 @@ public class ChatController {
 
     // SSE
     @CrossOrigin
-    @GetMapping(value = "/workspaces/{workspace_name}/chatrooms/{chatroom_name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Chat> chatAPI(@PathVariable String workspace_name, @PathVariable String chatroom_name ){
-        return chatService.slidedChat(workspace_name, chatroom_name);
+    @GetMapping(value = "/workspaces/{workSpaceId}/chatrooms/{chatRoomName}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Chat> chatAPI(@PathVariable Long workSpaceId, @PathVariable String chatRoomName ){
+        return chatService.slidedChat(workSpaceId, chatRoomName);
     }
 
 

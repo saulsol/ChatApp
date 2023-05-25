@@ -19,6 +19,8 @@ public class ChatRoom {
     private Long roomId;
 
     //워크스페이스 이름
+    private Long workSpaceId;
+
     private String workSpaceName;
 
     // 채팅방 이름

@@ -12,6 +12,8 @@ import java.util.List;
 @Builder
 public class CreateChatRoomDto {
 
+    private Long workSpaceId;
+
     private String workSpaceName;
 
     private String chatRoomName;

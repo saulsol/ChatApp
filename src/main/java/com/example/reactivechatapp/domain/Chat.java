@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Chat {
     @Id
-    private Long id;
+    private String id;
 
     private String msg;
 
@@ -26,9 +26,9 @@ public class Chat {
 
     private ReceiverType receiver; // 받는 사람(방 이름)
 
-    private String workSpaceName;
+    private Long workSpaceId; // 워크스페이스 ID
 
-    private String roomName; // 방 이름
+    private String chatRoomName; // 방 이름
 
     private LocalDateTime createdAt;
 

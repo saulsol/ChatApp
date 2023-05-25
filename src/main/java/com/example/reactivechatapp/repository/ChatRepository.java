@@ -13,8 +13,8 @@ public interface ChatRepository extends ReactiveMongoRepository<Chat, String> {
     Flux<Chat> rFindBySender(String sender, String receiver);
 
     @Tailable
-    @Query("{'workSpaceName': ?0, 'roomName': ?1}") // 워크 스페이스, 방 단위로 조회하게 됨
-    Flux<Chat> rFindByWorkspaceIdAndRoomName(String workspaceName, String roomName);
+    @Query("{'workSpaceId': ?0, 'ChatRoomName': ?1}") // 워크 스페이스, 방 단위로 조회하게 됨
+    Flux<Chat> rFindByWorkspaceIdAndRoomName(Long workSpaceId, String chatRoomName);
 
 
 
