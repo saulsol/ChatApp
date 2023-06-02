@@ -6,4 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/chatRoom")
 public class ChatRoomController {
+
+    // API 설정해야 함
+
+
 }
