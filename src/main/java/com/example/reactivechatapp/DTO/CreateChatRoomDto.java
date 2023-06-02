@@ -18,7 +18,7 @@ public class CreateChatRoomDto {
 
     private String chatRoomName;
 
-    private Long ChatRoomNumOfPeople;
+    private Long chatRoomNumOfPeople;
 
     private List<String> memberList;
 
