@@ -1,7 +1,6 @@
 package com.example.reactivechatapp.service;
 
 import com.example.reactivechatapp.DTO.CreateChatRoomDto;
-import com.example.reactivechatapp.DTO.FindAllChatRoomsDto;
 import com.example.reactivechatapp.domain.ChatRoom;
 import com.example.reactivechatapp.repository.ChatRepository;
 import com.example.reactivechatapp.repository.ChatRoomRepository;
@@ -10,9 +9,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

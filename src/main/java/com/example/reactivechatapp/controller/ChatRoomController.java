@@ -1,7 +1,6 @@
 package com.example.reactivechatapp.controller;
 
 import com.example.reactivechatapp.DTO.CreateChatRoomDto;
-import com.example.reactivechatapp.DTO.FindAllChatRoomsDto;
 import com.example.reactivechatapp.domain.ChatRoom;
 import com.example.reactivechatapp.service.ChatRoomService;
 import lombok.RequiredArgsConstructor;
@@ -9,8 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
